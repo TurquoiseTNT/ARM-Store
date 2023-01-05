@@ -1,0 +1,8 @@
+<script>
+    function setserver() {
+        var ip = document.getElementById('address')
+        document.cookie = "serverip=" + ip + "; path=/";
+    }
+</script>
+<input id="address">
+<button onclick="setserver();">Connect to Server</button>

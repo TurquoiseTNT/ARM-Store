@@ -1,0 +1,25 @@
+<script>
+    function getIp() {
+        let name = "serverip" + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    var ip = getIp();
+    function connectToServer() {
+        var confirmation = confirm("Go to Server Connect?")
+        if (confirmation === true) {
+            window.location.pathname = "/connect.html";
+        }
+    }
+</script>
+<button onclick="connectToServer">CONNECT TO DIFFERENT SERVER</button>
