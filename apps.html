@@ -1,6 +1,6 @@
 <script>
     function getIp() {
-        var decodedCookie = decodeURIComponent(document.cookie);
+        let decodedCookie = decodeURIComponent(document.cookie);
         var splice1 = decodedCookie.split('serverip = ');
         var splice2 = splice1[1].split(';');
         var ip = splice2[0];
