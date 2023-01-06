@@ -1,24 +1,17 @@
 <script>
     function getIp() {
-        let name = "serverip" + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var splice1 = decodedCookie.split('serverip = ');
+        var splice2 = splice1[1].split(';');
+        var ip = splice2[0];
+        document.getElementById("ipshow").innerHTML = "Connected To: " + ip;
     }
-    var ip = getIp();
     function connectToServer() {
         if (confirm("Go to Server Connect?") == true) {
             window.location.pathname = "/ARM-Store/connect.html";
         }
     }
 </script>
-<button onclick="connectToServer">CONNECT TO DIFFERENT SERVER</button>
+<button onclick="connectToServer()">CONNECT TO DIFFERENT SERVER</button>
+<h2 id="ipshow">Connected To:</h2>
+<script>getIp()</script>
