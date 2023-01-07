@@ -1,29 +1,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-<script src="scripts.js"></script>
 <link rel="stylesheet" href="style.css">
 <div id="top">
     <img id="topimg" src="back.png">
 </div>
 <div id="connect">
     <input id="address">
-    <button onclick="setserver();">Connect to Server</button>
+    <button class="button" onclick="setserver();">Connect to Server</button>
 </div>
 <div id="main">
-    <h2 id="ipshow"><button onclick="start()">CONNECT TO DIFFERENT SERVER</button> Connected To:</h2>
+    <h2 id="ipshow"><button class="button" onclick="start()">CONNECT TO DIFFERENT SERVER</button> Connected To:</h2>
 
     <div id="app">
-        <img style="height: 50px" src="https://se.ewi.tudelft.nl/desosa2019/chapters/powershell/images/powershell/PowerShellLogo.png" alt="Avatar" style="width:100%">
+        <img style="height: 50px" src="https://raw.githubusercontent.com/TurquoiseTNT/ARM-Store-Installers/main/powershell/logo.png" alt="Avatar" style="width:100%">
         <div class="container">
             <h3><b>Powershell</b></h3>
-            <p><a href="https://microsoft.com/powershell/">Powershell Team @ Microsoft</a> - Powershell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.<button onclick="install('powershell')" id="install">Install</button><button onclick="remove('powershell')" id="uninstall">Uninstall</button></p>
+            <p><a href="https://microsoft.com/powershell/">Powershell Team @ Microsoft</a> - Powershell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.<a href="javascript:install('powershell')"><button class="button" id="install">Install</button></a><a href="javascript:remove('powershell')"><button class="button" id="uninstall">Uninstall</button></a></p>
         </div>
     </div>
-
 </div>
-<div id="prompt-parent">
-    <div id="prompt-content">
-        <h2 id="prompt-title">TITLE</h2>
-        <h4 id="prompt-desc">DESCRIPTION</h4>
-    </div>
-</div>
+<script src="scripts.js"></script>
 <script>start();</script>
+<element id="blank"></element>
