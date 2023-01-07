@@ -1,76 +1,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-<script>
-    function start() {
-        document.getElementById("connect").style.visibility = 'visible';
-        document.getElementById("main").style.visibility = 'hidden';
-    }
-    function setserver() {
-        var ip = document.getElementById('address').value
-        document.getElementById("connect").style.visibility = 'hidden';
-        document.getElementById("main").style.visibility = 'visible';
-        document.getElementById("ipshow").innerHTML = "Connected To: " + ip
-    }
-    function install(app) {
-        location.href = ip + '/installapp/' + app;
-    }
-    function remove(app) {
-        location.href = ip + '/removeapp/' + app;
-    }
-</script>
-<style>
-    body{
-        font-family: 'Ubuntu', sans-serif;
-    }
-    #topimg {
-        height: 20%;
-    }
-    #top {
-        background-color: #3B3B3B;
-        width: 100%;
-        margin: 5px;
-    }
-    #app {
-        border-color: black;
-    }
-    #app {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-
-/* On mouse-over, add a deeper shadow */
-#app:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
-button {
-    background-color: lightgrey;
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 12px;
-  transition: color 1s, background-color 1s;
-  margin: 5px;
-}
-#install {
-    background-color: green;
-}
-#uninstall {
-    background-color: red;
-}
-button:hover {
-    background-color: black;
-    color: white;
-}
-</style>
+<script src="scripts.js"></script>
+<link rel="stylesheet" href="style.css">
 <div id="top">
     <img id="topimg" src="back.png">
 </div>
@@ -79,14 +9,21 @@ button:hover {
     <button onclick="setserver();">Connect to Server</button>
 </div>
 <div id="main">
-    <button onclick="start()">CONNECT TO DIFFERENT SERVER</button>
-    <h2 id="ipshow">Connected To:</h2>
+    <h2 id="ipshow"><button onclick="start()">CONNECT TO DIFFERENT SERVER</button> Connected To:</h2>
+
     <div id="app">
         <img style="height: 50px" src="https://se.ewi.tudelft.nl/desosa2019/chapters/powershell/images/powershell/PowerShellLogo.png" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h3><b>Powershell</b></h3>
-    <p><a href="https://learn.microsoft.com/en-gb/powershell/">Powershell Team @ Microsoft</a> - PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.<button onclick="install('powershell')" id="install">Install</button><button onclick="remove('powershell')" id="uninstall">Uninstall</button></p>
-  </div>
+        <div class="container">
+            <h3><b>Powershell</b></h3>
+            <p><a href="https://microsoft.com/powershell/">Powershell Team @ Microsoft</a> - Powershell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.<button onclick="install('powershell')" id="install">Install</button><button onclick="remove('powershell')" id="uninstall">Uninstall</button></p>
+        </div>
+    </div>
+
+</div>
+<div id="prompt-parent">
+    <div id="prompt-content">
+        <h2 id="prompt-title">TITLE</h2>
+        <h4 id="prompt-desc">DESCRIPTION</h4>
     </div>
 </div>
 <script>start();</script>
